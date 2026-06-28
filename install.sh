@@ -42,10 +42,46 @@ echo -e "${BLUE}Installing required Python dependencies...${NC}"
 # 4. Make run.sh executable
 chmod +x "$SCRIPT_DIR/run.sh"
 
+# 5. Create alias in .bashrc and .zshrc
+RUN_SCRIPT="$SCRIPT_DIR/run.sh"
+ALIAS_LINE="alias rptp=\"$RUN_SCRIPT\""
+
+# Update ~/.bashrc
+if [ -f "$HOME/.bashrc" ]; then
+    if ! grep -q "alias rptp=" "$HOME/.bashrc"; then
+        echo "" >> "$HOME/.bashrc"
+        echo "# Ren'Py Terminal Player Alias" >> "$HOME/.bashrc"
+        echo "$ALIAS_LINE" >> "$HOME/.bashrc"
+        echo -e "${GREEN}✓ Added 'rptp' alias to ~/.bashrc${NC}"
+    else
+        # Replace existing alias
+        sed -i "s|alias rptp=.*|alias rptp=\"$RUN_SCRIPT\"|g" "$HOME/.bashrc"
+        echo -e "${GREEN}✓ Updated 'rptp' alias in ~/.bashrc${NC}"
+    fi
+fi
+
+# Update ~/.zshrc
+if [ -f "$HOME/.zshrc" ]; then
+    if ! grep -q "alias rptp=" "$HOME/.zshrc"; then
+        echo "" >> "$HOME/.zshrc"
+        echo "# Ren'Py Terminal Player Alias" >> "$HOME/.zshrc"
+        echo "$ALIAS_LINE" >> "$HOME/.zshrc"
+        echo -e "${GREEN}✓ Added 'rptp' alias to ~/.zshrc${NC}"
+    else
+        # Replace existing alias
+        sed -i "s|alias rptp=.*|alias rptp=\"$RUN_SCRIPT\"|g" "$HOME/.zshrc"
+        echo -e "${GREEN}✓ Updated 'rptp' alias in ~/.zshrc${NC}"
+    fi
+fi
+
 echo ""
 echo -e "${GREEN}✓ Dependencies installed successfully!${NC}"
 echo -e "${GREEN}✓ Setup complete.${NC}"
 echo ""
-echo -e "To start playing a Ren'Py game, run:"
-echo -e "  ${BLUE}./run.sh /path/to/game_directory${NC}"
+echo -e "To apply the command alias, run:"
+echo -e "  ${BLUE}source ~/.bashrc${NC} (or ${BLUE}source ~/.zshrc${NC})"
 echo ""
+echo -e "Then you can start the player from anywhere by typing:"
+echo -e "  ${BLUE}rptp /path/to/game_directory${NC}"
+echo ""
+

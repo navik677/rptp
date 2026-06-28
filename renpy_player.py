@@ -1081,7 +1081,8 @@ class SaveLoadMenu(Container):
 # ─────────────────────────────────────────────────────────────
 
 class RenpyPlayerApp(App[None]):
-    TITLE = "ANTIGRAVITY ◈ Ren'Py TUI Player"
+    TITLE = "◈ Ren'Py TUI Player"
+
     
     CSS = """
     Screen {
@@ -1139,7 +1140,8 @@ class RenpyPlayerApp(App[None]):
         self._image_map = image_map
         self._game_name = game_name
         self._original_game_dir = original_game_dir
-        self._saves_dir = Path("/home/ona/.gemini/antigravity/scratch/game_cache") / game_name / "saves"
+        self._saves_dir = Path.home() / ".config" / "renpy_player" / game_name / "saves"
+
         self._waiting_for_choice = False
         self._pending_menu_node: ScriptNode | None = None
         
@@ -1439,7 +1441,8 @@ def main() -> None:
     rpy_files = sorted(list(game_dir.rglob("*.rpy")))
     
     # Cache setup if no .rpy files are found in game directory
-    cache_dir = Path("/home/ona/.gemini/antigravity/scratch/game_cache") / target_path.name / "game"
+    cache_dir = Path.home() / ".cache" / "renpy_player" / target_path.name / "game"
+
     
     if not rpy_files:
         rpa_files = list(game_dir.glob("*.rpa"))

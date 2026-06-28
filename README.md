@@ -88,4 +88,5 @@ graph TD
 
 ## ⚖️ License
 
-MIT License. Designed with 💜 by Antigravity.
+MIT License.
+
