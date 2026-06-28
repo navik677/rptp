@@ -1,6 +1,9 @@
 # ◈ Ren'Py Terminal Player ◈
 
 A premium, feature-rich Terminal User Interface (TUI) player for Ren'Py visual novels. Play your favorite visual novels directly in your terminal with high-resolution graphics, immersive background audio, and fully managed game states.
+<img width="943" height="1031" alt="image" src="https://github.com/user-attachments/assets/0cd27563-524b-4876-bc60-0cc8c6695a69" />
+<img width="946" height="1032" alt="image" src="https://github.com/user-attachments/assets/c3b44b8b-0907-4b72-8d4e-9088c283a23f" />
+
 
 ---
 
