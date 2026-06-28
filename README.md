@@ -40,12 +40,17 @@ A premium, feature-rich Terminal User Interface (TUI) player for Ren'Py visual n
 ## 🚀 Quick Start
 
 1. Clone or download this repository.
-2. Run the launcher script pointing to your Ren'Py game folder:
+2. Run the installer to automatically configure your environment and dependencies:
+   ```bash
+   ./install.sh
+   ```
+3. Run the launcher script pointing to your Ren'Py game folder:
    ```bash
    ./run.sh /path/to/your/renpy_game_folder
    ```
 
 *On the first run, the player will scan, extract, and decompile bytecode script archives, then load you directly into the terminal novel experience!*
+
 
 ---
 
