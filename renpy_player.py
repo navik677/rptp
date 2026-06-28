@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 ╔═══════════════════════════════════════════════════════════════╗
-║          A N T I G R A V I T Y   —  Ren'Py TUI Player        ║
+║                    —  Ren'Py TUI Player —                     ║
 ║   Run real Ren'Py Visual Novels inside your Terminal TUI      ║
 ║   Supports dynamic image rendering of backgrounds & sprites   ║
 ╚═══════════════════════════════════════════════════════════════╝
