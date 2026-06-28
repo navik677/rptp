@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+*.log
+saves/
+/tmp/kitty_vn_frame_*
